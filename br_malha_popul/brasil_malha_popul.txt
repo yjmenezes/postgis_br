@@ -4,3 +4,6 @@ split -b 25M 2020-04-29_Brasil_Meu_UF_popul.tar.xz
 # procedure to restore:
 cat xa{a..d} > /tmp/2020-04-29_Brasil_Meu_UF_popul.tar.xz
 tar xf /tmp/2020-04-29_Brasil_Meu_UF_popul.tar.xz -C /tmp/
+# num terminal:
+createdb banco
+psql banco -f 2020-04-29_Brasil_Meu_UF_popul.sql

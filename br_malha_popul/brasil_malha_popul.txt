@@ -35,7 +35,7 @@ CREATE TABLE public.mue11 (
     cdibge integer DEFAULT 0
 );
 
-# tabela das 26 unidades da fereracao
+# tabela das 26 unidades da federacao
 
 CREATE TABLE public.ufe11 (
     gid integer  NOT NULL,

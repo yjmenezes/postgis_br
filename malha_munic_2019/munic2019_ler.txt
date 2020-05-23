@@ -1,0 +1,17 @@
+# em sistema operacional da familia UNIX
+# to upload to git, split the large file:
+tar cpJvf $(date +%F)_munic2019.tar.xz  munic2019.sql
+split -b 25M 2020-05-23_munic2019.tar.xz
+# procedure to restore:
+cat xa{a..c} > /tmp/munic2019.tar.xz
+tar xf /tmp/munic2019.tar.xz -C /tmp/
+#-----------------------------------------------------------------------------
+                                         Tabela "public.munic2019"
+  Coluna  |            Tipo             | Collation | Nullable |                  Default                   
+----------+-----------------------------+-----------+----------+--------------------------------------------
+ ogc_fid  | integer                     |           | not null | nextval('munic2019_ogc_fid_seq'::regclass)
+ geom     | geometry(MultiPolygon,4674) |           |          | 
+ cd_mun   | character varying(7)        |           |          | 
+ nm_mun   | character varying(60)       |           |          | 
+ sigla_uf | character varying(2)        |           |          | 
+ area_km2 | numeric(10,3)               |           |          | 

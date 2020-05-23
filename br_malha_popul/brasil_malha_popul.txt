@@ -12,3 +12,36 @@ psql -d banco -c "CREATE EXTENSION postgis; \
  CREATE EXTENSION  unaccent;"
 #
 psql banco -f /tmp/Brasil_Meu_UF_popul.sql
+
+
+CREATE TABLE public.brasil (
+    gid integer  NOT NULL,
+    municipio character varying(254),
+    cidade character varying(254),
+    codmun bigint,
+    codibge bigint,
+    uf character varying(254),
+    ordem bigint,
+    geom public.geometry(Point,4326),
+    populacao integer DEFAULT 0
+);
+
+# tabelas dos municipios 
+CREATE TABLE public.mue11 (
+    gid integer  NOT NULL,
+    nm_municip character varying(60),
+    cd_geocmu character varying(7),
+    geom public.geometry(MultiPolygon,4674),
+    cdibge integer DEFAULT 0
+);
+
+# tabela das 26 unidades da fereracao
+
+CREATE TABLE public.ufe11 (
+    gid integer  NOT NULL,
+    nm_estado character varying(50),
+    nm_regiao character varying(20),
+    cd_geocuf character varying(2),
+    geom public.geometry(MultiPolygon,4674)
+);
+
